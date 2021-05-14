@@ -29,12 +29,12 @@ public:
 	bool IsInput;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "SphereSpeed")
 	float SphereSpeed;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "SphereSpeed")
+	float SpeedMax;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "SphereSpeed")
+	float SpeedMin;
 
 	FVector AngularVector;
-
-	// UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	// class UBoxComponent* BoxComp;
-
 
 protected:
 	// Called when the game starts or when spawned
@@ -44,7 +44,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
+	// Called to bind functionality to input ///pawn默认带有的输入映射函数
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 
@@ -52,4 +52,8 @@ public:
 	void MoveForward(float val);
 	UFUNCTION(BlueprintCallable, Category = "MoveRight")
 	void MoveRight(float val);
+	UFUNCTION(BlueprintCallable, Category = "MoveRight")
+	void SpeedUp();
+	UFUNCTION(BlueprintCallable, Category = "MoveRight")
+	void SpeedLow();
 };

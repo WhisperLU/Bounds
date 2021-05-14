@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/modules.xml
+/.idea.Bounce.iml
+# Datasource local storage ignored files
+/../../../../../../../:\UE4_Project\GitWork\Bounce\.idea\.idea.Bounce\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
