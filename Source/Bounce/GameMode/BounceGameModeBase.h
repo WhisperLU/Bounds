@@ -29,6 +29,6 @@ public:
 	// UFUNCTION(BlueprintCallable, Category = "SetLocation")
 	void SetPlayerLocation();
 	void SetPlayerLocation(FVector Start);
-
+	
 	void SetCurrentStart(FVector Location);
 };

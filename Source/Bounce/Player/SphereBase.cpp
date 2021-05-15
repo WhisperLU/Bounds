@@ -26,10 +26,12 @@ ASphereBase::ASphereBase()
 	CameraArmComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraArmComp"));
 	CameraArmComp->SetupAttachment(SphereMeshComp);
 	CameraArmComp->SetRelativeRotation(FRotator(-45.0f, 0.0f, 0.0f));
+	CameraArmComp->bDoCollisionTest = false;
+	CameraArmComp->TargetArmLength = 600.0f;
+	CameraArmComp->CameraLagSpeed = 3.0f;
 
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp"));
 	CameraComp->SetupAttachment(CameraArmComp);
-
 }
 
 // Called when the game starts or when spawned
@@ -42,7 +44,7 @@ void ASphereBase::BeginPlay()
 void ASphereBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
+
 	//输入事件且FVector都不为0，小球受力执行函数
 	if (IsInput && AngularVector != FVector(0, 0, 0))
 	{

@@ -15,8 +15,8 @@ class BOUNCE_API ASaveLocation : public AHitBoxBase
 	GENERATED_BODY()
 public:
 	ASaveLocation();
-
 	virtual void OnHitSphere(AActor* sphere) override;
+	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UStaticMeshComponent* SaveMeshComp;

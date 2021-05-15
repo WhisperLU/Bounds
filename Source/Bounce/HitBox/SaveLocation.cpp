@@ -10,6 +10,7 @@
 ASaveLocation::ASaveLocation()
 {
 	SaveMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
+	HitBoxComp->SetupAttachment(SaveMeshComp);
 }
 
 void ASaveLocation::OnHitSphere(AActor* sphere)
