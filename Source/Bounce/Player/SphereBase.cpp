@@ -45,7 +45,7 @@ void ASphereBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//输入事件且FVector都不为0，小球受力执行函数
+	//有输入事件且FVector都不为0，小球受力执行函数
 	if (IsInput && AngularVector != FVector(0, 0, 0))
 	{
 		SphereMeshComp->SetPhysicsAngularVelocityInDegrees(AngularVector);

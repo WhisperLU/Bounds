@@ -14,17 +14,17 @@ class BOUNCE_API AHitBoxBase : public AActor
 public:
 	// Sets default values for this actor's properties
 	AHitBoxBase();
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class UBoxComponent* HitBoxComp;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class UBoxComponent* HitBoxComp;
+	
 	//申明一个类似于OverLap的方法
 	UFUNCTION(BlueprintCallable, Category = "BeginHit")
 	void BeginHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,

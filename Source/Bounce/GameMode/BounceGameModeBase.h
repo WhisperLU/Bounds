@@ -34,10 +34,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetPlayerLocation();
 	
-	void SetPlayerLocation(FVector Start);
+	UFUNCTION(BlueprintCallable)
+	void SetPlayerLocationNew(FVector Start);
 	
 	UFUNCTION(BlueprintCallable)
-	void SetPlayerInput(bool isInput);
+	void SetPlayerInput(bool isInputRef);
 	
 	UFUNCTION(BlueprintCallable)
 	void SetCurrentStart(FVector Location);

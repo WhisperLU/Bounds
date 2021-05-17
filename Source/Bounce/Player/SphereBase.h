@@ -17,10 +17,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "StaticMesh")
 	class UStaticMeshComponent* SphereMeshComp;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CameraArm")
 	class USpringArmComponent* CameraArmComp;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CameraArm")
 	class UCameraComponent* CameraComp;
 
@@ -44,16 +42,17 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input ///pawn默认带有的输入映射函数
+	// Called to bind functionality to input ///pawn 默认带有的输入映射函数                                                  
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 
 	UFUNCTION(BlueprintCallable, Category = "MoveForward")
 	void MoveForward(float val);
 	UFUNCTION(BlueprintCallable, Category = "MoveRight")
 	void MoveRight(float val);
+	//按住Shift键加速
 	UFUNCTION(BlueprintCallable, Category = "MoveRight")
 	void SpeedUp();
+	//松开Shift键减速
 	UFUNCTION(BlueprintCallable, Category = "MoveRight")
 	void SpeedLow();
 };

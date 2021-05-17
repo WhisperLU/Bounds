@@ -36,21 +36,20 @@ void ABounceGameModeBase::SetPlayerLocation()
 	PlayPawn->SphereMeshComp->SetPhysicsLinearVelocity(FVector(0, 0, 0));
 	PlayPawn->SphereMeshComp->SetPhysicsAngularVelocityInDegrees(FVector(0, 0, 0));
 	PlayerDieNumber++;
-
 }
 
 //设置playpawn的位置  特殊位置
-void ABounceGameModeBase::SetPlayerLocation(FVector Start)
+void ABounceGameModeBase::SetPlayerLocationNew(FVector Start)
 {
 	PlayPawn->SetActorLocation(Start);
 	PlayPawn->SphereMeshComp->SetPhysicsLinearVelocity(FVector(0, 0, 0));
 	PlayPawn->SphereMeshComp->SetPhysicsAngularVelocityInDegrees(FVector(0, 0, 0));
 }
-
-void ABounceGameModeBase::SetPlayerInput(bool isInput)
+//设置小球当前是否拥有输入，用来判定当前是否能控制小球
+void ABounceGameModeBase::SetPlayerInput(bool isInputRef)
 {
-	PlayPawn->IsInput = isInput;
-	if (!isInput)
+	PlayPawn->IsInput = isInputRef;
+	if (!isInputRef)
 	{
 		IsEnd = true;
 	}
