@@ -21,14 +21,24 @@ public:
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="PlayPawn")
 	class ASphereBase* PlayPawn;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="CurrentStart")
 	FVector CurrentStart;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlayerDieNumber")
+	int32 PlayerDieNumber;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool IsEnd;
 public:
-	// UFUNCTION(BlueprintCallable, Category = "SetLocation")
+	UFUNCTION(BlueprintCallable)
 	void SetPlayerLocation();
+	
 	void SetPlayerLocation(FVector Start);
 	
+	UFUNCTION(BlueprintCallable)
+	void SetPlayerInput(bool isInput);
+	
+	UFUNCTION(BlueprintCallable)
 	void SetCurrentStart(FVector Location);
 };
